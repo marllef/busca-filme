@@ -1,0 +1,4 @@
+.header {
+  @apply sm:px-12 px-4 w-full overflow-hidden fixed z-40;
+  @apply flex flex-row bg-slate-900 text-white sm:h-12 h-14 items-center justify-between;
+}
