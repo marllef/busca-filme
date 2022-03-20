@@ -1,13 +1,13 @@
 import { FaSearch } from "react-icons/fa";
 import { useField } from "@unform/core";
-import styles from "./styles/SearchBar.module.css";
+import styles from "./styles/Input.module.css";
 import { InputHTMLAttributes, useEffect, useRef } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  name?: string;
+  name: string;
 }
 
-export const SearchBar = ({ name = "search", ...rest }: Props) => {
+export const Input = ({ name, ...rest }: Props) => {
   const searchRef = useRef(null);
   const { fieldName, defaultValue, registerField, error } = useField(name);
 
@@ -28,7 +28,7 @@ export const SearchBar = ({ name = "search", ...rest }: Props) => {
   }, [fieldName, registerField]);
 
   return (
-    <label className={`${styles.searchBar}`}>
+    <label className={`${styles.container}`}>
       <span className="sr-only">Buscar Filmes</span>
       <span className={styles.searchIcon}>
         <FaSearch size={14} />
@@ -41,7 +41,6 @@ export const SearchBar = ({ name = "search", ...rest }: Props) => {
         placeholder="Buscar título..."
         {...rest}
       />
-      <input type="submit" onSubmit={() => console.log("Submeteu")} hidden />
     </label>
   );
 };

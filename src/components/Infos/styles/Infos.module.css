@@ -1,0 +1,16 @@
+.container {
+  @apply flex flex-col mx-4 justify-center items-center;
+}
+
+.heading {
+  @apply flex flex-row text-2xl w-96 font-semibold mt-3 text-center;
+  @apply justify-center items-center;
+}
+
+.sinopse_container {
+  @apply hidden sm:flex flex-col text-justify items-center w-80 mt-2 mx-4;
+}
+
+.sinopse_title {
+  @apply text-red-500 font-semibold text-lg;
+}
