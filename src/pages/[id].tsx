@@ -13,7 +13,7 @@ import { Poster } from "~/components/Poster";
 import { FullMovie } from "~/interfaces/movie";
 import { MovieServices } from "~/services/MovieDB";
 
-const Home: NextPage = ({
+const MoviePage: NextPage = ({
   data: d,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const data: FullMovie = d;
@@ -43,7 +43,7 @@ const Home: NextPage = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
-  const data = await MovieServices.findMovieByID(`${params?.id}`);
+  const data = await MovieServices.findMovieByID(`${params?.id!}`);
 
   return {
     props: {
@@ -63,4 +63,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export default Home;
+export default MoviePage;
