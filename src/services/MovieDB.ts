@@ -4,7 +4,7 @@ export const MovieServices = {
   searchMovie: async (search: string) => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${search}`
+        `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${search}`
       );
 
       const data = await response.json();
@@ -19,7 +19,7 @@ export const MovieServices = {
   findMovieByID: async (id: string) => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&i=${id}`
+        `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&i=${id}`
       );
       const data = await response.json();
 
