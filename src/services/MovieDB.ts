@@ -22,7 +22,7 @@ export const MovieServices = {
         `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&i=${id}`
       );
       const data = await response.json();
-      console.log(data);
+
       if (response.ok) {
         const movie: FullMovie = data;
         return movie;
