@@ -25,16 +25,12 @@ const Home: NextPage = ({
       <HeaderBar />
 
       <main
-        className="flex bg-slate-900 text-slate-100 h-full w-full pt-14 sm:pt-12 justify-center items-start overflow-auto lg:px-40"
+        className="flex bg-slate-900 text-slate-100 h-full w-full pt-14 sm:pt-12 justify-center items-start overflow-auto"
         ref={mainRef}
       >
         <div className="flex flex-col sm:flex-row  items-center sm:items-start">
           <Poster src={data.Poster} />
           <Infos movie={data} />
-          <img
-            className="sm:hidden border-red-500 rounded-lg border-4"
-            src={data.Poster}
-          />
           <div className=" sm:hidden text-justify  w-80 mt-2">
             <span className="text-red-500 font-semibold">Sinopse:</span>{" "}
             {data.Plot}

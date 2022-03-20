@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col mx-4 justify-center items-center;
+  @apply flex flex-col sm:mx-4 justify-center items-center overflow-hidden;
 }
 
 .heading {
