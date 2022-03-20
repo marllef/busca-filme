@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
+import styles from "./styles/Brand.module.css";
 
 interface Props {
   size?:
@@ -38,11 +40,23 @@ export const Brand = ({ size = "lg", onClick }: Props) => {
   return (
     <>
       <div
-        className={`text-white select-none cursor-pointer ${sizes[size]}`}
+        className={`${styles.container} ${sizes[size]} ${
+          size === "4xl" ? "flex-col" : "flex-row"
+        } ${size === "4xl" ? "animate-bounce" : null}`}
         onClick={() => router.push("/")}
       >
-        <span className="italic">Busca</span>
-        <span className="italic text-red-500 font-semibold">Filmes</span>
+        <span className="mr-1">
+          <Image
+            src="/favicon.svg"
+            width={size === "4xl" ? 120 : 30}
+            height={size === "4xl" ? 120 : 30}
+            draggable={false}
+          />
+        </span>
+        <span>
+          <span className="italic">Busca</span>
+          <span className="italic text-red-500 font-semibold">Filmes</span>
+        </span>
       </div>
     </>
   );

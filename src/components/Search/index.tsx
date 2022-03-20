@@ -24,11 +24,11 @@ const SearchComponent = (
       <div
         ref={ref}
         className={
-          "flex w-full h-full flex-col justify-center items-center snap-center"
+          "flex w-full h-full flex-col justify-center items-center snap-center pb-28"
         }
         {...rest}
       >
-        <div className="mb-4">
+        <div className="mb-2">
           <Brand size="4xl" />
         </div>
 

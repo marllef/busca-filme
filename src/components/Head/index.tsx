@@ -11,7 +11,7 @@ export const Head = ({ title = "Buscar Filmes", children }: Props) => {
     <NextHead>
       <title>{title}</title>
       <meta name="description" content="Encontre seu filme" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.svg" />
       {children}
     </NextHead>
   );

@@ -1,0 +1,4 @@
+.container {
+  @apply flex text-white justify-center h-full items-center;
+  @apply select-none cursor-pointer;
+}

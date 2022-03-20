@@ -21,7 +21,7 @@ const MoviePage: NextPage = ({
 
   return (
     <>
-      <Head />
+      <Head title={`${data.Title} | Filme`} />
       <HeaderBar />
 
       <main
