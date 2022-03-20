@@ -20,9 +20,7 @@ _Siga o passo-a-passo para instalar o projeto em sua máquina._
 
 3. Crie e adicione sua `API_KEY` em `.env` seguindo o exemplo de `.env.example`.
 
-### Utilização
-
-_Para utilizar, execute o seguinte comando dentro da pasta do projeto:_
+4. Execute o seguinte comando dentro da pasta do projeto:
 
 ```
   npm run dev
