@@ -29,11 +29,11 @@ const MoviePage: NextPage = ({
         ref={mainRef}
       >
         <div className="flex flex-col sm:flex-row  items-center sm:items-start">
-          <Poster src={data.Poster} />
-          <Infos movie={data} />
+          <Poster src={data?.Poster} />
+          <Infos movie={data!} />
           <div className=" sm:hidden text-justify  w-80 mt-2">
             <span className="text-red-500 font-semibold">Sinopse:</span>{" "}
-            {data.Plot}
+            {data?.Plot}
           </div>
         </div>
       </main>
