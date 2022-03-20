@@ -2,6 +2,20 @@
 
 _Um app para buscar informações de filmes na web._
 
+<div align='center'>
+
+![Tela principal](/public/screenshots/screen_1.png)
+_Tela principal do app._
+
+</div>
+
+<div align='center'>
+
+![Tela principal](/public/screenshots/screen_2.png)
+_Resultados da busca._
+
+</div>
+
 ### Getting Started
 
 _Siga o passo-a-passo para instalar o projeto em sua máquina._
