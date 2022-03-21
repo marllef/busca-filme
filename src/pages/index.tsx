@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FloatButton } from "~/components/FloatButton";
 import { Head } from "~/components/Head";
 import { HeaderBar } from "~/components/HeaderBar";
 import { MovieList } from "~/components/MovieList";
 import { Search } from "~/components/Search";
 import useData from "~/hooks/useData";
+import styles from "~/styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [arrow, setArrow] = useState("up");
@@ -59,10 +60,7 @@ const Home: NextPage = () => {
       <Head />
       <HeaderBar />
 
-      <main
-        ref={mainRef}
-        className="bg-slate-900 h-full pt-14 sm:pt-12 overflow-hidden snap-mandatory snap-y"
-      >
+      <main ref={mainRef} className={styles.container}>
         <Search
           ref={searchRef}
           onWheel={(e) => {
