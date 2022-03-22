@@ -5,6 +5,7 @@ import { forwardRef, HTMLAttributes, LegacyRef } from "react";
 import useData from "~/hooks/useData";
 import { Brand } from "../Brand";
 import { Input } from "../Input";
+import styles from "./styles/Search.module.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
@@ -21,13 +22,7 @@ const SearchComponent = (
 
   return (
     <>
-      <div
-        ref={ref}
-        className={
-          "flex w-full h-full flex-col justify-center items-center snap-center pb-28"
-        }
-        {...rest}
-      >
+      <div ref={ref} className={styles.container} {...rest}>
         <div className="mb-2">
           <Brand size="4xl" />
         </div>

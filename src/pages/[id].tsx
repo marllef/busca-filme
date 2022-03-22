@@ -6,22 +6,24 @@ import type {
 } from "next";
 import Image from "next/image";
 import { useRef } from "react";
+import { MovieDetails } from "~/adapters/MovieAdapter";
 import { Head } from "~/components/Head";
 import { HeaderBar } from "~/components/HeaderBar";
 import { Infos } from "~/components/Infos";
 import { Poster } from "~/components/Poster";
-import { FullMovie } from "~/interfaces/movie";
-import { MovieServices } from "~/services/MovieDB";
+import { OMDBMovie } from "~/models/OMDBModel";
+import { MovieServices } from "~/services/OMDBServices";
+import { TMDBServices } from "~/services/TMDBServices";
 
 const MoviePage: NextPage = ({
-  data: d,
+  data: propsData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const data: FullMovie = d;
+  const data = new MovieDetails(propsData);
   const mainRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <Head title={`${data.Title} | Filme`} />
+      <Head title={`${data.title} | Filme`} />
       <HeaderBar />
 
       <main
@@ -29,11 +31,11 @@ const MoviePage: NextPage = ({
         ref={mainRef}
       >
         <div className="flex flex-col sm:flex-row  items-center sm:items-start">
-          <Poster src={data?.Poster} />
-          <Infos movie={data!} />
+          <Poster src={data?.poster!} />
+          <Infos details={data!} />
           <div className=" sm:hidden text-justify  w-80 mt-2">
             <span className="text-red-500 font-semibold">Sinopse:</span>{" "}
-            {data?.Plot}
+            {data?.overview}
           </div>
         </div>
       </main>
@@ -43,7 +45,7 @@ const MoviePage: NextPage = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
-  const data = await MovieServices.findMovieByID(`${params?.id!}`);
+  const data = await TMDBServices.findMovieByID(`${params?.id!}`);
 
   return {
     props: {

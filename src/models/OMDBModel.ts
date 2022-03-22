@@ -1,12 +1,6 @@
-export interface Movie {
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Type: string;
-  Poster: string;
-}
+import { TMDBMovie } from "./TMDBModel";
 
-export interface FullMovie {
+export interface OMDBMovie {
   Title: string;
   Year: string;
   Rated: string;
@@ -32,4 +26,8 @@ export interface FullMovie {
   Production: string;
   Website: string;
   Response: string;
+}
+
+export function isOMDbMovie(param: OMDBMovie | TMDBMovie): param is OMDBMovie {
+  return "Title" in param;
 }

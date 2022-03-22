@@ -1,12 +1,14 @@
 import { LegacyRef, forwardRef, HTMLAttributes } from "react";
-import { Movie } from "~/interfaces/movie";
 import { MovieCard } from "../MovieCard";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  data?: Movie[];
+  data?: any[];
 }
 
-const ListComponent = ({ data, ...rest }: Props, ref: LegacyRef<HTMLDivElement>) => {
+const ListComponent = (
+  { data, ...rest }: Props,
+  ref: LegacyRef<HTMLDivElement>
+) => {
   return (
     <>
       {data?.length && (
@@ -19,8 +21,8 @@ const ListComponent = ({ data, ...rest }: Props, ref: LegacyRef<HTMLDivElement>)
           <div className="flex h-fit flex-row flex-wrap justify-center content-start">
             {(data || [])
               .sort((a, b) => Number(b.Year) - Number(a.Year))
-              .map((item: Movie, index) => (
-                <MovieCard key={item.imdbID + index} movie={item} />
+              .map((item, index) => (
+                <MovieCard key={item.id + index} movie={item} />
               ))}
           </div>
         </div>

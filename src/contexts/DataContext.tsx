@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { Movie } from "~/interfaces/movie";
-import { MovieServices } from "~/services/MovieDB";
+import { OMDBMovie } from "~/models/OMDBModel";
+import { MovieServices } from "~/services/OMDBServices";
+import { TMDBServices } from "~/services/TMDBServices";
 
 interface Props {
   children: ReactNode;
@@ -8,18 +9,18 @@ interface Props {
 
 interface Values {
   search: { (search: string): void };
-  data: Movie[];
+  data: OMDBMovie[];
 }
 
 export const MovieContext = createContext<Values | null>(null);
 
 export const DataProvider = ({ children }: Props) => {
   const [search, setSearch] = useState("");
-  const [data, setData] = useState<Movie[]>();
+  const [data, setData] = useState<OMDBMovie[]>();
 
   useEffect(() => {
     if (search) {
-      MovieServices.searchMovie(search)
+      TMDBServices.searchMovie(search)
         .then((value) => {
           setData(value);
         })
