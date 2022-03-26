@@ -36,6 +36,7 @@ const ListComponent = (
               <a
                 className="text-red-500 font-semibold"
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.themoviedb.org/"
               >
                 The Movie Database

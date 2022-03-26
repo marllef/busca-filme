@@ -19,6 +19,7 @@ const CreditsPage = () => {
               <a
                 href="https://instagram.com/marllef"
                 target="_blank"
+                rel="noreferrer"
                 className="text-red-500 font-semibold"
               >
                 Marllef
@@ -39,6 +40,7 @@ const CreditsPage = () => {
               <a
                 className="text-red-500 font-semibold"
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.themoviedb.org/"
               >
                 The Movie Database
