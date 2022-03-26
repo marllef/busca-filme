@@ -1,0 +1,8 @@
+.navItem {
+  @apply flex w-full text-white hover:bg-slate-700 px-2 p-1 rounded font-semibold;
+  @apply underline-offset-4 decoration-2;
+}
+
+.navItem a {
+  @apply decoration-red-600;
+}

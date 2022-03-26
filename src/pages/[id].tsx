@@ -23,8 +23,7 @@ const MoviePage: NextPage = ({
 
   return (
     <>
-      <Head title={`${data.title} | Filme`} />
-      <HeaderBar />
+      <Head title={`${data.title} | Busca Filmes`} />
 
       <main
         className="flex bg-slate-900 text-slate-100 h-full w-full pt-14 sm:pt-12 justify-center items-start overflow-auto"

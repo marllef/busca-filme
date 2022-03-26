@@ -1,0 +1,4 @@
+.footer {
+  @apply flex h-10 w-full bg-slate-700 text-white;
+  @apply p-2
+}

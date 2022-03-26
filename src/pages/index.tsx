@@ -2,9 +2,8 @@ import type { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import { FloatButton } from "~/components/FloatButton";
 import { Head } from "~/components/Head";
-import { HeaderBar } from "~/components/HeaderBar";
 import { MovieList } from "~/components/MovieList";
-import { Search } from "~/components/Search";
+import { SearchView } from "~/layout/SearchLayout";
 import useData from "~/hooks/useData";
 import styles from "~/styles/Home.module.css";
 
@@ -14,6 +13,10 @@ const Home: NextPage = () => {
   const listRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => scrollToTop(), 1200);
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -58,30 +61,24 @@ const Home: NextPage = () => {
   return (
     <>
       <Head />
-      <HeaderBar />
 
-      <main ref={mainRef} className={styles.container}>
-        <Search
-          ref={searchRef}
-          onWheel={(e) => {
-            if (e.deltaY > 0 && mainRef.current?.scrollTop! > 0) {
-              scrollToDown();
+      <main
+        ref={mainRef}
+        className={styles.container}
+        onWheel={(e) => {
+          if (e.deltaY > 0) {
+            scrollToDown();
+          } else if (e.deltaY < 0) {
+            if (listRef.current?.scrollTop === 0) {
+              scrollToTop();
             }
-          }}
-        />
-        <MovieList
-          ref={listRef}
-          data={data}
-          onWheel={(e) => {
-            if (e.deltaY < 0) {
-              if (e.currentTarget.scrollTop === 0) {
-                scrollToTop();
-              }
-            } else {
-              scroll(e.deltaY);
-            }
-          }}
-        />
+          } else {
+            scroll(e.deltaY);
+          }
+        }}
+      >
+        <SearchView ref={searchRef} />
+        <MovieList ref={listRef} data={data} />
         <FloatButton
           direction={arrow}
           onClick={() => {

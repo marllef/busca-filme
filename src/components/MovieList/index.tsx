@@ -1,8 +1,12 @@
+import Link from "next/link";
 import { LegacyRef, forwardRef, HTMLAttributes } from "react";
+import { Movie } from "~/adapters/MovieAdapter";
+import { Footer } from "../Footer";
+
 import { MovieCard } from "../MovieCard";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  data?: any[];
+  data?: Movie[];
 }
 
 const ListComponent = (
@@ -20,10 +24,24 @@ const ListComponent = (
         >
           <div className="flex h-fit flex-row flex-wrap justify-center content-start">
             {(data || [])
-              .sort((a, b) => Number(b.Year) - Number(a.Year))
+              .sort((a, b) => Number(b.year) - Number(a.year))
               .map((item, index) => (
-                <MovieCard key={item.id + index} movie={item} />
+                <MovieCard key={item.id.toString() + index} movie={item} />
               ))}
+            <p className="text-xs text-white p-1">
+              <Link href="/about">
+                <a className="text-red-500 font-semibold">Dados</a>
+              </Link>{" "}
+              fornecidos pelo{" "}
+              <a
+                className="text-red-500 font-semibold"
+                target="_blank"
+                href="https://www.themoviedb.org/"
+              >
+                The Movie Database
+              </a>
+              .
+            </p>
           </div>
         </div>
       )}

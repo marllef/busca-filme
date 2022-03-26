@@ -1,0 +1,3 @@
+.container {
+  @apply flex w-full h-[85%] flex-col justify-center items-center snap-center pb-5;
+}

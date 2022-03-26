@@ -6,12 +6,11 @@ import { useRouter } from "next/router";
 import { Movie } from "~/adapters/MovieAdapter";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  movie: OMDBMovie | TMDBMovie;
+  movie: Movie;
 }
 
-export const MovieCard = ({ movie: propsMovie, ...rest }: Props) => {
+export const MovieCard = ({ movie, ...rest }: Props) => {
   const router = useRouter();
-  const movie = new Movie(propsMovie);
 
   return (
     <>
