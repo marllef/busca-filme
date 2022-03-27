@@ -11,13 +11,13 @@ export const Infos = ({ details: movie }: Props) => {
     <>
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className="truncate">{movie.title}</span>
-          <span className="text-red-500 ml-1">({movie.year})</span>
+          <span>{`${movie.title} `}</span>
+          <span className={styles.year}>({movie.year})</span>
         </div>
-        <div className="font-semibold mb-3">{movie.genre}</div>
-        <div className="font-semibold w-60 text-center">
-          <span className="text-red-500">Produção:</span>{" "}
-          <span>{movie.production}</span>
+        <div className={styles.genre}>{movie.genre}</div>
+        <div className={styles.production}>
+          <span className={styles.production_heading}>Produção:</span>{" "}
+          <span className={styles.production_content}>{movie.production}</span>
         </div>
         <div className={styles.sinopse_container}>
           <span className={styles.sinopse_title}>Sinopse:</span>

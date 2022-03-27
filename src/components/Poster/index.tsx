@@ -12,7 +12,7 @@ interface Props {
 export const Poster = ({ src, size = [200, 300], providers }: Props) => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center">
         <div className={styles.container}>
           <Image
             draggable={false}

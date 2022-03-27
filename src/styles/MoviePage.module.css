@@ -1,0 +1,9 @@
+.main {
+  @apply flex flex-col bg-slate-900 text-slate-100 h-full w-full;
+  @apply pt-14 sm:pt-12 justify-between items-center overflow-hidden;
+}
+
+.content {
+  @apply w-full flex p-2 pt-32 sm:pt-10 justify-center overflow-hidden overflow-y-auto;
+  @apply flex-col items-center sm:flex-row sm:items-start;
+}

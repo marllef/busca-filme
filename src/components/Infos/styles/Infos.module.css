@@ -1,16 +1,36 @@
 .container {
-  @apply flex flex-col sm:mx-4 justify-center items-center overflow-hidden;
+  @apply flex flex-col sm:px-4 justify-center items-center;
 }
 
 .heading {
-  @apply flex flex-row text-2xl w-96 font-semibold mt-3 text-center;
+  @apply flex flex-row flex-wrap text-2xl w-80 font-semibold pt-3 pb-2 text-center;
   @apply justify-center items-center;
 }
 
+.year {
+  @apply text-red-500 ml-1;
+}
 .sinopse_container {
-  @apply hidden sm:flex flex-col text-justify items-center w-80 mt-2 mx-4;
+  @apply flex flex-col text-justify items-center w-80 mt-2 mx-4;
+  @apply text-justify w-80 mt-2;
 }
 
 .sinopse_title {
   @apply text-red-500 font-semibold text-lg;
+}
+
+.production {
+  @apply flex flex-col justify-center items-center font-semibold w-80 text-center text-sm;
+}
+
+.production_heading {
+  @apply flex text-lg text-red-500;
+}
+
+.production_content {
+  @apply flex w-full justify-center;
+}
+
+.genre {
+  @apply font-semibold mb-3 w-80 text-center text-sm;
 }
