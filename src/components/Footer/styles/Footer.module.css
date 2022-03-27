@@ -1,4 +1,8 @@
 .footer {
-  @apply flex h-10 w-full bg-slate-700 text-white;
-  @apply p-2
+  @apply flex h-10 w-full justify-center items-center text-xs text-white;
+  @apply p-2;
+}
+
+.footer a {
+  @apply text-slate-400 ;
 }

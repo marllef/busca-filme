@@ -33,7 +33,29 @@ const CreditsPage = () => {
               Dados de Filmes e API
             </h3>
 
-            <p className=" text-slate-100 w-72 text-justify pb-4">
+            <p className="text-slate-100 text-justify w-72 py-2 pt-4">
+              Os dados relacionados aos provedores de streaming são fornecidos
+              pelo{" "}
+              <a
+                href="https://www.justwatch.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-500 font-semibold"
+              >
+                JustWatch
+              </a>
+              .
+            </p>
+            <image className="py-4">
+              <Image
+                src="/credits/just-watch.svg"
+                alt="TMDB logo."
+                width={250}
+                height={30}
+              />
+            </image>
+
+            <p className=" text-slate-100 w-72 text-justify">
               Todos os metadados relacionados a filmes usados neste site,
               incluindo nomes de atores, diretores, estúdios, sinopses, datas de
               lançamento, trailers e pôsteres são fornecidos pelo{" "}
@@ -47,15 +69,17 @@ const CreditsPage = () => {
               </a>{" "}
               (TMDb).
             </p>
-            <Image
-              src="/credits/TMDB.svg"
-              alt="TMDB logo."
-              width={250}
-              height={30}
-            />
-            <p className="font-semibold italic text-slate-100 text-justify w-72 py-2 pt-4">
-              O <span className="text-red-500">BuscaFilmes</span> utiliza a API
-              do TMDb, mas não é endossado ou certificado pelo TMDb.{" "}
+            <image className="py-4">
+              <Image
+                src="/credits/TMDB.svg"
+                alt="TMDB logo."
+                width={250}
+                height={30}
+              />
+            </image>
+            <p className="font-semibold italic text-slate-100 text-justify w-72">
+              O BuscaFilmes utiliza a API do TMDb, mas não é endossado ou
+              certificado pelo TMDb.{" "}
             </p>
           </section>
         </article>

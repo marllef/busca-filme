@@ -28,21 +28,7 @@ const ListComponent = (
               .map((item, index) => (
                 <MovieCard key={item.id.toString() + index} movie={item} />
               ))}
-            <p className="text-xs text-white p-1">
-              <Link href="/about">
-                <a className="text-red-500 font-semibold">Dados</a>
-              </Link>{" "}
-              fornecidos pelo{" "}
-              <a
-                className="text-red-500 font-semibold"
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.themoviedb.org/"
-              >
-                The Movie Database
-              </a>
-              .
-            </p>
+            <Footer />
           </div>
         </div>
       )}

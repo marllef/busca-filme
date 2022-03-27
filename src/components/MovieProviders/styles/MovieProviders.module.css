@@ -1,0 +1,11 @@
+.container {
+  @apply flex flex-col w-40 py-2 justify-center items-center;
+}
+
+.container h5 {
+  @apply text-red-500 font-semibold py-1;
+}
+
+.streaming_list {
+  @apply flex flex-row w-full justify-center items-center flex-wrap bg-slate-800 rounded;
+}
