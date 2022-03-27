@@ -19,15 +19,6 @@ export const Footer = ({ children }: Props) => {
           href="https://www.themoviedb.org/"
         >
           The Movie Database
-        </a>{" "}
-        e{" "}
-        <a
-          href="https://www.justwatch.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-400 font-semibold"
-        >
-          JustWatch
         </a>
         .
       </p>

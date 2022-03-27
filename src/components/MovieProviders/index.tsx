@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { TMDBWatchProviders } from "~/models/TMDBModel";
 import { getTMDBImagePath } from "~/utils/getTMDBImage";
 import styles from "./styles/MovieProviders.module.css";
@@ -16,16 +17,19 @@ export const MovieProviders = ({ providers }: Props) => {
           <span className={styles.streaming_list}>
             {keys.map((key) => {
               if (key === "flatrate") {
-                return providers[key].map((item, index) => (
+                return providers[key].map((item) => (
                   <a
+                    className="flex justify-center p-1 items-center"
                     key={item.provider_id}
                     href={providers.link}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img
+                    <Image
                       className="rounded-xl p-1 w-10"
                       alt={item.provider_name}
+                      width={40}
+                      height={40}
                       src={getTMDBImagePath(item.logo_path)}
                     />
                   </a>
@@ -34,7 +38,14 @@ export const MovieProviders = ({ providers }: Props) => {
             })}
           </span>
           <span className="text-xs text-slate-600 select-none italic py-1">
-            Provided by JustWatch
+            Provided by{" "}
+            <a
+              href="https://www.justwatch.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JustWatch
+            </a>
           </span>
         </div>
       </>

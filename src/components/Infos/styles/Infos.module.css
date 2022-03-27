@@ -32,5 +32,5 @@
 }
 
 .genre {
-  @apply font-semibold mb-3 w-80 text-center text-sm;
+  @apply font-semibold mb-3 w-80 text-center text-sm text-red-500;
 }

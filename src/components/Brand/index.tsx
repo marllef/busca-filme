@@ -48,6 +48,7 @@ export const Brand = ({ size = "lg", onClick }: Props) => {
         <span className="mr-1">
           <Image
             src="/favicon.svg"
+            alt="Icone do site"
             width={size === "4xl" ? 120 : 30}
             height={size === "4xl" ? 120 : 30}
             draggable={false}

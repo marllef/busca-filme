@@ -11,8 +11,7 @@ export const Infos = ({ details: movie }: Props) => {
     <>
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span>{`${movie.title} `}</span>
-          <span className={styles.year}>({movie.year})</span>
+          <span>{`${movie.title} (${movie.year})`}</span>
         </div>
         <div className={styles.genre}>{movie.genre}</div>
         <div className={styles.production}>
