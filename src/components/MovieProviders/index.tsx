@@ -16,11 +16,15 @@ export const MovieProviders = ({ providers }: Props) => {
           <span className={styles.streaming_list}>
             {keys.map((key) => {
               if (key === "flatrate") {
-                return providers[key].map((item) => (
-                  <a href={providers.link} target="_blank" rel="noreferrer">
+                return providers[key].map((item, index) => (
+                  <a
+                    key={item.provider_id}
+                    href={providers.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
                       className="rounded-xl p-1 w-10"
-                      key={item.provider_id}
                       alt={item.provider_name}
                       src={getTMDBImagePath(item.logo_path)}
                     />
@@ -29,7 +33,9 @@ export const MovieProviders = ({ providers }: Props) => {
               }
             })}
           </span>
-          <span className="text-xs text-slate-600 select-none italic py-1">Provided by JustWatch</span>
+          <span className="text-xs text-slate-600 select-none italic py-1">
+            Provided by JustWatch
+          </span>
         </div>
       </>
     );
