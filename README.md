@@ -1,4 +1,4 @@
-# 🔎 Busca Filmes
+# 🔎 [Busca Filmes](https://www.buscafilmes.ga/) - Buscador de Filmes Online
 
 _Um app para buscar informações de filmes na web._
 
@@ -23,9 +23,12 @@ _Detalhes do filme._
 
 </div>
 
-### Getting Started
+# ⚠️ Informações Importantes ⚠️
 
-_Siga o passo-a-passo para instalar o projeto em sua máquina._
+- Siga as instruções deste documento para instalar o projeto em sua máquina.
+- Você pode acessar este projeto [clicando aqui](https://www.buscafilmes.ga/).
+
+## Executando Localmente
 
 1. Clone o repositório:
 
@@ -36,7 +39,7 @@ _Siga o passo-a-passo para instalar o projeto em sua máquina._
 2. Instale todas as depedências:
 
 ```
-  npm install
+  yarn install
 ```
 
 3. Crie e adicione sua `API_KEY` em `.env` seguindo o exemplo de `.env.example`.
@@ -44,5 +47,11 @@ _Siga o passo-a-passo para instalar o projeto em sua máquina._
 4. Execute o seguinte comando dentro da pasta do projeto:
 
 ```
-  npm run dev
+  yarn dev
 ```
+
+## Licença
+
+Este projeto está licenciado sob licença do MIT.
+
+Copyright (c) 2022 [Marllef Hyorrane Alves De Freitas](http://github.com/marllef)
